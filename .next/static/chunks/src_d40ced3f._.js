@@ -1412,6 +1412,7 @@ __turbopack_context__.s({
     "fetchCustomerProjects": (()=>fetchCustomerProjects),
     "fetchProjectDetails": (()=>fetchProjectDetails)
 });
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // Mock data - In production, replace with actual Bitrix24 API calls
 const mockClients = [
     {
@@ -1498,16 +1499,16 @@ const mockCustomers = [
 async function fetchAllClients() {
     try {
         // Simulate API call delay
-        await new Promise((resolve)=>setTimeout(resolve, 1000));
+        // await new Promise(resolve => setTimeout(resolve, 1000));
         // In production, make actual API call to Bitrix24
-        // const response = await fetch(`https://${process.env.BITRIX_DOMAIN}/rest/crm.contact.list`, {
-        //   headers: {
-        //     'Authorization': `Bearer ${process.env.BITRIX_API_KEY}`
-        //   }
-        // });
-        // const data = await response.json();
-        // return data.result;
-        return mockClients;
+        const response = await fetch(`https://${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.BITRIX_DOMAIN}rest/7/${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.BITRIX_API_KEY}/crm.lead.list.json`, {
+            headers: {
+                'Authorization': `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.BITRIX_API_KEY}`
+            }
+        });
+        const data = await response.json();
+        return data.result;
+    // return mockClients;
     } catch (error) {
         console.error('Error fetching clients from Bitrix24:', error);
         throw new Error('Failed to fetch client data');
